@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>תרומה לבית הכנסת רבי אברהם ואזנה</title>
-  <meta name="description" content="תרומה לבית הכנסת רבי אברהם ואזנה. מתחילים בוואטסאפ, עונים על כמה שאלות קצרות וממשיכים לתשלום." />
+  <meta name="description" content="תרומה לבית הכנסת רבי אברהם ואזנה. מתחילים בוואטסאפ וממשיכים לפי ההנחיות." />
 
   <style>
     :root{
-      /* Bright holy palette */
       --overlayTop: rgba(255,255,255,.78);
       --overlayBottom: rgba(255,255,255,.90);
 
@@ -23,14 +22,9 @@
       --gold2: #c9a23f;
       --gold3: #b48a1c;
 
-      --blue1: #2f62ad;
-      --blue2: #6ea8e6;
-
-      /* WhatsApp softer */
       --wa1: #7fe8a8;
       --wa2: #37c778;
 
-      /* Soft button shadow */
       --btnShadow: 0 10px 22px rgba(0,0,0,.10);
       --btnShadowHover: 0 14px 28px rgba(0,0,0,.14);
     }
@@ -96,7 +90,7 @@
 
     h1{
       margin: 0;
-      font-size: 36px;
+      font-size: 34px;
       line-height: 1.15;
       letter-spacing: .2px;
     }
@@ -152,7 +146,7 @@
       margin-top: 12px;
       border-radius: 18px;
       font-size: 19px;
-      font-weight: 1000;
+      font-weight: 900;
       text-decoration:none;
       cursor:pointer;
       transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
@@ -166,28 +160,24 @@
       box-shadow: var(--btnShadowHover);
     }
 
-    /* WhatsApp: softer green gradient */
     .btn.whatsapp{
       background: linear-gradient(135deg, var(--wa1), var(--wa2));
       color: #06140b;
       border-color: rgba(0,0,0,.10);
     }
 
-    /* Secondary buttons: not pure white, slight blue tint */
     .btn.secondary{
       background: rgba(110,168,230,.14);
       color: #0f2e5c;
       border-color: rgba(47,98,173,.22);
     }
 
-    /* "My donations" button: gold */
     .btn.my{
       background: linear-gradient(135deg, var(--gold1), var(--gold2));
       color: #2a1f00;
       border-color: rgba(180,138,28,.35);
     }
 
-    /* Payment button stays gold but a touch stronger */
     .btn.pay{
       background: linear-gradient(135deg, var(--gold2), var(--gold3));
       color: #2a1f00;
@@ -225,7 +215,7 @@
     }
 
     @media (max-width: 420px){
-      h1{ font-size: 30px; }
+      h1{ font-size: 28px; }
       .btn{ font-size: 18px; }
       .star{ font-size: 40px; }
     }
@@ -259,19 +249,21 @@
         <h2>איך זה עובד, פשוט</h2>
         <ol>
           <li>לוחצים על הכפתור הירוק ופותחים וואטסאפ</li>
-          <li>עונים על שאלות קצרות, סכום, שם, הקדשה אם יש</li>
+          <li>כותבים "תרומה" וממשיכים לפי ההנחיות</li>
           <li>מקבלים קישור לתשלום ומסיימים את התרומה</li>
         </ol>
       </div>
 
+      <!-- WhatsApp opens, bot handles the rest -->
       <a class="btn whatsapp"
-         href="https://wa.me/972501234567?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%AA%D7%A8%D7%95%D7%9D%20%D7%9C%D7%91%D7%99%D7AA%20%D7%94%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A8%D7%91%D7%99%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%20%D7%95%D7%90%D7%96%D7%A0%D7%94%20%D7%95%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%9C%D7%AA%D7%A9%D7%9C%D7%95%D7%9D"
+         href="https://wa.me/972501234567"
          target="_blank" rel="noopener">
-        לתרומה בוואטסאפ עם נציג
+        לתרומה בוואטסאפ
       </a>
 
+      <!-- My donations, use a simple command the bot can understand -->
       <a class="btn my"
-         href="https://wa.me/972501234567?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%90%D7%95%D7%AA%20%D7%90%D7%ת%20%D7%9B%D7%9C%20%D7%94%D7%AA%D7%A8%D7%95%D7%מ%D7%95%D7%ת%20%D7%A9%D7%9C%D7%י"
+         href="https://wa.me/972501234567?text=MY_DONATIONS"
          target="_blank" rel="noopener">
         צפייה בכל התרומות שלי
       </a>
