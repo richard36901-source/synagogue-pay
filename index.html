@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>תשלום והמשך לבוט</title>
+
+  <style>
+    :root{
+      --overlay: rgba(6,9,16,.80);
+      --card: rgba(18,22,34,.78);
+      --text: #f3f6ff;
+      --muted: rgba(243,246,255,.72);
+      --accent1: #7db7ff;
+      --accent2: #9dffbf;
+      --radius: 18px;
+      --shadow: 0 26px 70px rgba(0,0,0,.62);
+    }
+
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; margin:0; }
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Arial;
+      color: var(--text);
+      background:
+        linear-gradient(var(--overlay), var(--overlay)),
+        url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=2400&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:100%;
+      max-width:430px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      text-align:center;
+      backdrop-filter: blur(10px);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.15;
+    }
+
+    p{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      padding:14px 16px;
+      margin-top:12px;
+      border-radius:14px;
+      font-size:15px;
+      font-weight:800;
+      text-decoration:none;
+      cursor:pointer;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      opacity:.96;
+    }
+
+    .pay{
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      color:#0a1220;
+      border: 0;
+    }
+
+    .bot{
+      background: rgba(255,255,255,.10);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .tiny{
+      margin-top:14px;
+      font-size:12px;
+      color: rgba(243,246,255,.60);
+    }
+
+    .line{
+      margin-top:16px;
+      height:1px;
+      background: rgba(255,255,255,.10);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>תשלום והמשך לבוט</h1>
+      <p>
+        שלב 1: מבצעים תשלום.
+        <br>
+        שלב 2: חוזרים לכאן ולוחצים על הכפתור כדי להמשיך בבוט בוואטסאפ.
+      </p>
+
+      <!-- החלף כאן את לינק התשלום שלך -->
+      <a class="btn pay" href="https://example.com/payment" target="_blank" rel="noopener">
+        לתשלום עכשיו
+      </a>
+
+      <div class="line"></div>
+
+      <!-- החלף כאן את לינק הבוט / מספר וואטסאפ -->
+      <a class="btn bot" href="https://wa.me/972501234567" target="_blank" rel="noopener">
+        המשך לבוט בוואטסאפ
+      </a>
+
+      <div class="tiny">
+        אם משהו לא נפתח, בדוק שיש לך וואטסאפ מותקן / או פתח דרך WhatsApp Web.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
