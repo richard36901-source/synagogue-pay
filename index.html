@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>תרומה לבית הכנסת רבי אברהם ואזנה</title>
-  <meta name="description" content="תרומה לבית הכנסת בקלות. מתחילים בוואטסאפ, עונים על כמה שאלות וממשיכים לתשלום." />
+  <meta name="description" content="תרומה לבית הכנסת רבי אברהם ואזנה. מתחילים בוואטסאפ, עונים על כמה שאלות קצרות וממשיכים לתשלום." />
 
   <style>
     :root{
@@ -26,7 +26,13 @@
       --blue1: #2f62ad;
       --blue2: #6ea8e6;
 
-      --whatsapp: #25D366;
+      /* WhatsApp softer */
+      --wa1: #7fe8a8;
+      --wa2: #37c778;
+
+      /* Soft button shadow */
+      --btnShadow: 0 10px 22px rgba(0,0,0,.10);
+      --btnShadowHover: 0 14px 28px rgba(0,0,0,.14);
     }
 
     *{ box-sizing:border-box; }
@@ -149,31 +155,43 @@
       font-weight: 1000;
       text-decoration:none;
       cursor:pointer;
-      transition: transform .15s ease, opacity .15s ease;
+      transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
       border: 1px solid transparent;
+      box-shadow: var(--btnShadow);
     }
 
     .btn:hover{
       transform: translateY(-1px);
-      opacity: .97;
+      opacity: .98;
+      box-shadow: var(--btnShadowHover);
     }
 
+    /* WhatsApp: softer green gradient */
     .btn.whatsapp{
-      background: var(--whatsapp);
-      color: #07130b;
+      background: linear-gradient(135deg, var(--wa1), var(--wa2));
+      color: #06140b;
       border-color: rgba(0,0,0,.10);
     }
 
+    /* Secondary buttons: not pure white, slight blue tint */
     .btn.secondary{
-      background: rgba(255,255,255,.92);
-      color: #1a1a1a;
-      border-color: rgba(0,0,0,.14);
+      background: rgba(110,168,230,.14);
+      color: #0f2e5c;
+      border-color: rgba(47,98,173,.22);
     }
 
-    .btn.pay{
+    /* "My donations" button: gold */
+    .btn.my{
       background: linear-gradient(135deg, var(--gold1), var(--gold2));
       color: #2a1f00;
       border-color: rgba(180,138,28,.35);
+    }
+
+    /* Payment button stays gold but a touch stronger */
+    .btn.pay{
+      background: linear-gradient(135deg, var(--gold2), var(--gold3));
+      color: #2a1f00;
+      border-color: rgba(180,138,28,.38);
     }
 
     .divider{
@@ -193,6 +211,7 @@
       line-height: 1.95;
       color: #2a2a2a;
       font-weight: 650;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
     }
 
     .noteBox strong{ color: #101010; }
@@ -215,14 +234,14 @@
 
 <body>
   <div class="wrap">
-    <main class="card" aria-label="תרומה לבית הכנסת">
+    <main class="card" aria-label="תרומה לבית הכנסת רבי אברהם ואזנה">
 
       <div class="top">
         <div class="star" aria-hidden="true">✡</div>
         <div class="badge">תרומה לבית הכנסת</div>
       </div>
 
-      <h1>תודה שאתם מחזקים את הבית שלנו</h1>
+      <h1>תרומה לבית הכנסת רבי אברהם ואזנה</h1>
 
       <p class="subtitle">
         הדרך הכי פשוטה לתרום היא דרך הוואטסאפ.
@@ -246,13 +265,13 @@
       </div>
 
       <a class="btn whatsapp"
-         href="https://wa.me/972501234567?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%AA%D7%A8%D7%95%D7%9D%20%D7%9C%D7%91%D7%99%D7AA%20%D7%94%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%95%D7%9C%D7%A7%D7ב%D7%9C%20%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%9C%D7%AA%D7%A9%D7%9C%D7%95%D7%9D"
+         href="https://wa.me/972501234567?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%AA%D7%A8%D7%95%D7%9D%20%D7%9C%D7%91%D7%99%D7AA%20%D7%94%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A8%D7%91%D7%99%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%20%D7%95%D7%90%D7%96%D7%A0%D7%94%20%D7%95%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%9C%D7%AA%D7%A9%D7%9C%D7%95%D7%9D"
          target="_blank" rel="noopener">
         לתרומה בוואטסאפ עם נציג
       </a>
 
-      <a class="btn secondary"
-         href="https://wa.me/972501234567?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%90%D7%95%D7%AA%20%D7%90%D7%AA%20%D7%9B%D7%9C%20%D7%94%D7%AA%D7%A8%D7%95%D7%9E%D7%95%D7%AA%20%D7%A9%D7%9C%D7%י"
+      <a class="btn my"
+         href="https://wa.me/972501234567?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%90%D7%95%D7%AA%20%D7%90%D7%ת%20%D7%9B%D7%9C%20%D7%94%D7%AA%D7%A8%D7%95%D7%מ%D7%95%D7%ת%20%D7%A9%D7%9C%D7%י"
          target="_blank" rel="noopener">
         צפייה בכל התרומות שלי
       </a>
