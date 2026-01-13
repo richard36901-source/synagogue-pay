@@ -3,28 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>תשלום והמשך לבוט</title>
+  <title>תרומה לבית הכנסת</title>
 
   <style>
     :root{
-      --overlay: rgba(6,9,16,.80);
-      --card: rgba(18,22,34,.78);
-      --text: #f3f6ff;
-      --muted: rgba(243,246,255,.72);
+      --overlay: rgba(8,10,18,.78);
+      --card: rgba(18,22,34,.82);
+      --text: #f5f7ff;
+      --muted: rgba(245,247,255,.78);
+      --border: rgba(255,255,255,.18);
+      --shadow: 0 26px 70px rgba(0,0,0,.62);
+      --radius: 20px;
       --accent1: #7db7ff;
       --accent2: #9dffbf;
-      --radius: 18px;
-      --shadow: 0 26px 70px rgba(0,0,0,.62);
+      --soft: rgba(255,255,255,.10);
     }
 
     *{ box-sizing:border-box; }
     html, body{ height:100%; margin:0; }
+
     body{
       font-family: system-ui, -apple-system, "Segoe UI", Arial;
       color: var(--text);
       background:
         linear-gradient(var(--overlay), var(--overlay)),
-        url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=2400&q=80");
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=80");
       background-size: cover;
       background-position: center;
     }
@@ -34,42 +37,89 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:24px;
+      padding: 22px;
     }
 
     .card{
       width:100%;
-      max-width:430px;
+      max-width: 520px;
       background: var(--card);
-      border: 1px solid rgba(255,255,255,.14);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding:28px;
+      padding: 26px;
       text-align:center;
       backdrop-filter: blur(10px);
     }
 
-    h1{
-      margin:0 0 10px;
-      font-size:28px;
-      line-height:1.15;
+    .badge{
+      display:inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: rgba(245,247,255,.92);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 12px;
     }
 
-    p{
-      margin:0 0 18px;
+    h1{
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: .2px;
+    }
+
+    .subtitle{
+      margin: 0 0 16px;
+      font-size: 16px;
       color: var(--muted);
-      font-size:15px;
-      line-height:1.5;
+      line-height: 1.65;
+    }
+
+    .story{
+      margin: 0 0 18px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 14px 14px;
+      text-align:right;
+      color: rgba(245,247,255,.86);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .steps{
+      margin: 0 0 18px;
+      text-align:right;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .steps h2{
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .steps ol{
+      margin: 0;
+      padding-right: 18px;
+      color: rgba(245,247,255,.86);
+      font-size: 15px;
+      line-height: 1.75;
     }
 
     .btn{
       display:block;
       width:100%;
-      padding:14px 16px;
-      margin-top:12px;
-      border-radius:14px;
-      font-size:15px;
-      font-weight:800;
+      padding: 16px 16px;
+      margin-top: 12px;
+      border-radius: 16px;
+      font-size: 18px;
+      font-weight: 900;
       text-decoration:none;
       cursor:pointer;
       transition: transform .15s ease, opacity .15s ease;
@@ -77,61 +127,125 @@
 
     .btn:hover{
       transform: translateY(-1px);
-      opacity:.96;
+      opacity: .97;
     }
 
-    .pay{
+    .btn.pay{
       background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      color:#0a1220;
+      color: #0a1220;
       border: 0;
     }
 
-    .bot{
+    .btn.alt{
       background: rgba(255,255,255,.10);
       color: var(--text);
       border: 1px solid rgba(255,255,255,.18);
     }
 
-    .tiny{
-      margin-top:14px;
-      font-size:12px;
-      color: rgba(243,246,255,.60);
+    .btn.whatsapp{
+      background: #25D366;
+      color: #07130b;
+      border: 0;
     }
 
-    .line{
-      margin-top:16px;
+    .small{
+      margin-top: 14px;
+      color: rgba(245,247,255,.70);
+      font-size: 13px;
+      line-height: 1.7;
+      text-align:right;
+    }
+
+    .divider{
       height:1px;
-      background: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.12);
+      margin: 16px 0 8px;
+    }
+
+    .noteBox{
+      margin-top: 12px;
+      text-align:right;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(245,247,255,.86);
+    }
+
+    .noteBox strong{ color: rgba(245,247,255,.95); }
+
+    @media (max-width: 420px){
+      h1{ font-size: 28px; }
+      .btn{ font-size: 17px; }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="card">
-      <h1>תשלום והמשך לבוט</h1>
-      <p>
-        שלב 1: מבצעים תשלום.
-        <br>
-        שלב 2: חוזרים לכאן ולוחצים על הכפתור כדי להמשיך בבוט בוואטסאפ.
+    <main class="card" aria-label="תרומה לבית הכנסת">
+
+      <div class="badge">תרומה לבית הכנסת</div>
+
+      <h1>תודה שאתם מחזקים את הבית שלנו</h1>
+
+      <p class="subtitle">
+        כל תרומה עוזרת לנו להמשיך להדליק אור, להחזיק שיעורים, לקיים תפילות,
+        ולתת מקום חם לקהילה, גם למי שאין לו.
       </p>
 
-      <!-- החלף כאן את לינק התשלום שלך -->
-      <a class="btn pay" href="https://example.com/payment" target="_blank" rel="noopener">
-        לתשלום עכשיו
-      </a>
-
-      <div class="line"></div>
-
-      <!-- החלף כאן את לינק הבוט / מספר וואטסאפ -->
-      <a class="btn bot" href="https://wa.me/972501234567" target="_blank" rel="noopener">
-        המשך לבוט בוואטסאפ
-      </a>
-
-      <div class="tiny">
-        אם משהו לא נפתח, בדוק שיש לך וואטסאפ מותקן / או פתח דרך WhatsApp Web.
+      <div class="story">
+        לפעמים תרומה קטנה היא בדיוק מה שעושה את ההבדל.
+        זה לא רק כסף, זו השתתפות בזכות של מצווה ובבניית מקום של קדושה ושייכות.
       </div>
-    </div>
+
+      <div class="steps">
+        <h2>איך זה עובד, פשוט</h2>
+        <ol>
+          <li>בוחרים דרך תשלום שמתאימה לכם</li>
+          <li>מבצעים תשלום</li>
+          <li>אחרי התשלום לוחצים על הכפתור הירוק בוואטסאפ כדי לקבל אישור ולעדכן פרטים לתרומה</li>
+        </ol>
+      </div>
+
+      <!-- החליפו את הקישורים בכאלה אמיתיים -->
+      <a class="btn pay" href="https://example.com/pay-card" target="_blank" rel="noopener">
+        תשלום באשראי
+      </a>
+
+      <a class="btn alt" href="https://example.com/bit" target="_blank" rel="noopener">
+        תשלום בביט
+      </a>
+
+      <a class="btn alt" href="https://example.com/paybox" target="_blank" rel="noopener">
+        תשלום בפייבוקס
+      </a>
+
+      <a class="btn alt" href="https://example.com/bank-transfer" target="_blank" rel="noopener">
+        העברה בנקאית, פרטים לתשלום
+      </a>
+
+      <div class="divider"></div>
+
+      <!-- כפתור וואטסאפ לאחר תשלום -->
+      <a class="btn whatsapp"
+         href="https://wa.me/972501234567?text=%D7%94%D7%99%D7%99%20%D7%91%D7%99%D7%A6%D7%A2%D7%AA%D7%99%20%D7%AA%D7%A8%D7%95%D7%9E%D7%94%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%90%D7%99%D7%A9%D7%95%D7%A8%20%D7%95%D7%9C%D7%A2%D7%93%D7%9B%D7%9F%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D"
+         target="_blank" rel="noopener">
+        אחרי התשלום, לחצו כאן להמשך בוואטסאפ
+      </a>
+
+      <div class="noteBox">
+        <strong>צריכים עזרה?</strong><br>
+        אם הסתבכתם, פשוט לחצו על כפתור הוואטסאפ ונעזור לכם בשיחה קצרה.
+      </div>
+
+      <p class="small">
+        טיפ קטן: אם הוואטסאפ לא נפתח, נסו לפתוח דרך WhatsApp Web במחשב, או דרך הטלפון.
+      </p>
+
+    </main>
   </div>
 </body>
 </html>
